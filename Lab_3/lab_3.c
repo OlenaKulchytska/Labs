@@ -12,6 +12,8 @@ int main()
 
     for(double x=0.1;x<=1;x+=0.09)
     {
+        SN=0;
+        SE=0;
         Y=((1+pow(x,2))/2)*(atan(x))-(x/2);
         for(int n = 1;n<31;n++)
         {
