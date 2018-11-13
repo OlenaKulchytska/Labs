@@ -39,15 +39,6 @@ int main()
         printf("  %d  ",mas[l-1]);
     }
 
-    printf("\nAnother one: \n");
 
-    for(int j=k+1; j<n; j++)
-    {
-        printf("  %d  ",mas[j]);
-    }
-    for(int l=0; l<(k-1); l++)
-    {
-        printf("  %d  ",mas[l]);
-    }
     return 0;
 }
