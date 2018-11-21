@@ -1,44 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
 int main()
 {
-    int n, k, num;
-
+    int n, k1,k2;
     printf("Enter n: \n");
     scanf("%d",&n);
-    int mas[n];
+    int mas[n],mas1[n-2];
     for(int i=0; i<n; i++)
     {
         mas[i]= rand()%100;
         printf("  %d  ",mas[i]);
     }
-
-    printf("\nEnter k:\n");
-    scanf("%d",&k);
-
-    num=n-k;
-    for(int j=k; j>0; j--)
+    printf("\nEnter k1:\n");
+    scanf("%d",&k1);
+    if(k1>=n)
     {
-        printf("  %d  ",mas[j-1]);
+        printf("error\n");
     }
-    for(int l=n; l-1>num; l--)
+    else
     {
-        printf("  %d  ",mas[l-1]);
+        for(int j=k1; j>(k1-2); j--)
+        {
+            printf("  %d  ",mas[j]);
+        }
     }
-
     printf("\nNew mas: \n");
-
-    for(int j=k-1; j>0; j--)
+    int y=0;
+    for(int i=1;i<(n-1);i++)
     {
-        printf("  %d  ",mas[j-1]);
+        mas1[y]=mas[i];
+        y++;
     }
-    for(int l=n; l-1>(num+1); l--)
+    printf("Put k2: ");
+    scanf("%d",&k2);
+    if(k2<n-2)
     {
-        printf("  %d  ",mas[l-1]);
+    for(int j=k2; j<(k2+2); j++)
+    {
+        printf("  %d  ",mas1[j]);
     }
-
-
+    }else
+    {
+    printf("error\n");
+    }
+    
+    
     return 0;
 }
+
