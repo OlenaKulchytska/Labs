@@ -1,11 +1,11 @@
-include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 int **make_mas(int rows,int columns)
 {
     int **mas;
-    mas=(int)malloc(rows*sizeof(int));
+    mas=(int**)malloc(rows*sizeof(int*));
     for(int i=0;i<rows;i++){
-        mas[i]=(int)malloc(columns*sizeof(int));
+        mas[i]=(int*)malloc(columns*sizeof(int));
     }
     for(int i=0;i<rows;i++){
         for(int j=0; j<columns;j++){
@@ -41,7 +41,7 @@ int main()
             }
         }
     }
-    printf("Max element = %d\n",max);
+    printf("%d\n",max);
     for(int i=0;i<rows;i++){
         for(int j=0;j<columns;j++){
             if(max_r==i||max_c==j){
@@ -77,4 +77,9 @@ int main()
         }
         printf("\n");
     }
+    for (int i = 0; i < rows; ++i) {
+        free(array[i]);
+    }
+    free(array);
+    return 0;
 }
